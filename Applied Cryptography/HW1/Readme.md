@@ -1,7 +1,7 @@
 A grayscale image is encrypted using the Vigenere method and attached.
 Assumptions:
--The value of the most redundant pixel is 180.
--The key length is not bigger than 20.
+- The value of the most redundant pixel is 180.
+- The key length is not bigger than 20.
 The original picture must be recovered.
 
 The encryption code is written below:
