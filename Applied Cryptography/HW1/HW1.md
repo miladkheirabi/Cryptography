@@ -1,6 +1,6 @@
-There is a grayscale image that is encrypted by the Vigenere method and attached.
+There is a grayscale image that is encrypted using the Vigenere method and attached.
 Assuming that the value of the most redundant pixel is 180, the plain image must be recovered.
-The encryption code is also attached.
+The encryption code is written below:
 
 ```python
 import numpy as np
