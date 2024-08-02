@@ -17,4 +17,4 @@ c = p.copy()
 for i, j in product(range(m // n), range(m // n)):
 c[i * n : (i + 1) * n, j * n : (j + 1) * n] ^= k
 Image.fromarray(c).save("cipher.png")
-'''Python
+'''python
