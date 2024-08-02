@@ -1,8 +1,8 @@
-There is a grayscale image that is encrypted by vigenere method and attached.
-Asuming that the value of most redundant pixel is 180, the plain image must be recovered.
+There is a grayscale image that is encrypted by the Vigenere method and attached.
+Assuming that the value of the most redundant pixel is 180, the plain image must be recovered.
 The encryption code is also attached.
 
-'''
+```python
 import numpy as np
 from PIL import Image
 from itertools import product
@@ -15,6 +15,6 @@ n = k.shape[0]
 
 c = p.copy()
 for i, j in product(range(m // n), range(m // n)):
-c[i * n : (i + 1) * n, j * n : (j + 1) * n] ^= k
+    c[i * n : (i + 1) * n, j * n : (j + 1) * n] ^= k
+
 Image.fromarray(c).save("cipher.png")
-'''python
