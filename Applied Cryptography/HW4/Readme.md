@@ -2,9 +2,9 @@
 
 Consider the following relations:
 
-- \( x^a ≡ z mod N) \)
-- \( y^b ≡ z mod N) \)
-- \( w^{ab} ≡ z mod N) \)
+-  $ x^ {a} $ =z(modN)
+-  $ y^ {b} $ =z(modN)
+-  $ w^ {ab} $ =z(modN) 
 
 where:
 
