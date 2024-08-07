@@ -1,10 +1,10 @@
-**Problem:**
+## Problem
 
 Consider the following relations:
 
-- \( x^a \equiv z \ (\text{mod} \ N) \)
-- \( y^b \equiv z \ (\text{mod} \ N) \)
-- \( w^{ab} \equiv z \ (\text{mod} \ N) \)
+- \( x^ {a} \equiv z \pmod{N} \)
+- \( y^ {b} \equiv z \pmod{N} \)
+- \( w^ {ab} \equiv z \pmod{N} \)
 
 where:
 
@@ -15,6 +15,6 @@ where:
 - \( y = 22860843198302662681629113752353217222 \)
 - \( z = 11550537085346654381869258148777389840 \)
 
-**Task:**
+## Task
 
 Determine \( w \) given the above conditions.
