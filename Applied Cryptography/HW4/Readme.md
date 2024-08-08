@@ -7,7 +7,7 @@
 
 
 Consider the following relations:
-- $\( x^a \equiv z \ (\text{mod} \ N) \)$
+- $\x^a \equiv z \ (\text{mod} \ N)$
 - $\( y^b \equiv z \ (\text{mod} \ N) \)$
 - $\( w^{ab} \equiv z \ (\text{mod} \ N) \)$
 where:
