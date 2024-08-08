@@ -57,9 +57,7 @@ def extended_gcd(a, b):
 
 
 u, v = extended_gcd(a, b)
-tmp1 = pow(x,v,N)
-tmp2 = pow(y,u,N)
-w = pow(tmp1*tmp2,1,N)
+w = pow(x,v,N) * pow(y,u,N) % N
 print(f"u: {u}, v: {v}, w:{w}")
 ```
 - u = 10616958366426942569600531678716415266
