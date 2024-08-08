@@ -1,5 +1,3 @@
-## Problem Description
-
 In the Merkle-Damgård structure, we can use a full-block CFB mode to create a hash function. This code utilizes AES with a 192-bit key length, where the first block of the message is used as the Initialization Vector (IV). The message length is encoded in bytes, and an additional 4 bytes are used to represent the length of the message. Consequently, the maximum length of the message can be up to \(2^{32}\) bytes.
 
 ### Task
