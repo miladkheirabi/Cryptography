@@ -122,4 +122,4 @@ $\[ H(p-1402, p-2023-q) = H(p-1402, p-2023) \]$
 
 ### Conclusion
 
-The collisions occur because adding \( q \) to \( y \) in the hash function effectively negates the value due to the properties of modular arithmetic. Specifically, $\( b^q \equiv -1 \mod p \) when \( q = \frac{p-1}{2} \)$. This results in collisions in the hash function.
+The collisions occur because adding \( q \) to \( y \) in the hash function effectively negates the value due to the properties of modular arithmetic. Specifically, $\( b^q \equiv -1 \mod p \) \when\ \( q = \frac{p-1}{2} \)$. This results in collisions in the hash function.
