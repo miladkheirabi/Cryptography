@@ -48,16 +48,20 @@ z = 11550537085346654381869258148777389840
 
 def extended_gcd(a, b):
     if a == 0:
-        return b, 0, 1
+        return 0, 1
     else:
-        gcd, x1, y1 = extended_gcd(b % a, a)
+        x1, y1 = extended_gcd(b % a, a)
         u = y1 - (b // a) * x1
         v = x1
-        return gcd, u, v
+        return u, v
 
 
-gcd, u, v = extended_gcd(a, b)
-print(f"gcd: {gcd}, x: {x}, y: {y}")
+u, v = extended_gcd(a, b)
 tmp1 = pow(x,v,N)
 tmp2 = pow(y,u,N)
-print(pow(tmp1*tmp2,1,N))
+w = pow(tmp1*tmp2,1,N)
+print(f"u: {u}, v: {v}, w:{w}")
+```
+- u = 10616958366426942569600531678716415266
+- v = -4983771957455134258169495341793746135
+- w = 35766277574666954059893916652511119753
