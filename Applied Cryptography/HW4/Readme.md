@@ -8,7 +8,7 @@
 
 Consider the following relations:
 $$
-x^ {a} $ =z(modN), $ y^ {b} $ =z(modN),
+x^ {a} =z(modN), y^ {b} =z(modN),
 $$
 where:
 $$
