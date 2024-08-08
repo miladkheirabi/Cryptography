@@ -2,9 +2,7 @@
 
 Consider the following relations:
 $$
-- \( x^ {a} \equiv z \pmod{N} \)
-- \( y^ {b} \equiv z \pmod{N} \)
-- \( w^ {ab} \equiv z \pmod{N} \)
+x^ {a} $ =z(modN), $ y^ {b} $ =z(modN),
 $$
 where:
 $$
