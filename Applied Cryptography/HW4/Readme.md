@@ -36,7 +36,7 @@ $w= x^v * y^u \pmod{N}$
 
 ### Python Implementation
 
-Below is a Python code snippet to compute \( w \):
+Below is a Python code snippet to compute u, v and w:
 
 ```python
 N = 51477399871343954567451032427835692323
