@@ -31,7 +31,7 @@ $w^ {ab} \pmod{N} = Z^ {1} \pmod{N} = Z^ {au+vb} \pmod{N} = z^ {au} \times z^ {b
 
 Thus, the value of \( w \) can be determined as:
 
-$w= x^v * y^u \pmod{N}$
+$w= x^v \times y^u \pmod{N}$
 
 
 ### Python Implementation
