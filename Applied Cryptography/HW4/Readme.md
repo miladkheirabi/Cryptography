@@ -7,9 +7,9 @@
 
 
 Consider the following relations:
-$$
-x^ {a} =z(modN), y^ {b} =z(modN),
-$$
+- $\( x^a \equiv z \ (\text{mod} \ N) \)$
+- $\( y^b \equiv z \ (\text{mod} \ N) \)$
+- $\( w^{ab} \equiv z \ (\text{mod} \ N) \)$
 where:
 $$
 - \( N = 51477399871343954567451032427835692323 \)
