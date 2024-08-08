@@ -1,5 +1,3 @@
-# Problem Description
-
 Farmers use encryption to transmit their messages, ensuring the confidentiality of their communications by combining straw and remaining leaves. The most well-known method to do this among wheat farmers is to maintain this secrecy. This nature-friendly technique is a combination of chaff and winnowing.
 
 ### Process Overview:
