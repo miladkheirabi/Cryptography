@@ -12,6 +12,9 @@
 
 Although single-DES was cryptanalyzed long ago, variants such as **Triple-DES** were invented to mitigate the small key length. However, DES (and consequently some uses of Triple-DES) still has a dangerous property: the existence of *weak* and *semi-weak* keys that drastically reduce effective security.
 
+> **Important:** A simple web UI is provided at the address below. You do **not** need** to write code or use external HTTP libraries — the UI accepts keys/plaintext and shows ciphertext.  
+> **Challenge UI:** https://miladkheirabi.pythonanywhere.com
+
 This challenge provides two endpoints (also available through a simple web UI):
 
 - `https://miladkheirabi.pythonanywhere.com/encrypt/<key>/<plaintext>/`  
@@ -19,9 +22,6 @@ This challenge provides two endpoints (also available through a simple web UI):
 
 - `https://miladkheirabi.pythonanywhere.com/encrypt_flag/<key>/`  
   — encrypts the hidden flag using a *pre-determined random key* (internal to the service) and returns the ciphertext (hex). You can supply a key parameter to the endpoint as part of the challenge interface.
-
-> **Important:** A simple web UI is provided at the address below. You do **not** need** to write code or use external HTTP libraries — the UI accepts keys/plaintext and shows ciphertext.  
-> **Challenge UI:** https://miladkheirabi.pythonanywhere.com
 
 The flag format is: Mercer{flag}
 
