@@ -28,6 +28,53 @@ The flag format is: Mercer{flag}
 
 ---
 
+## Provided Source Code
+
+When you visit the challenge page, you will also have access to the following source code that implements the encryption logic:
+
+```python
+from flask import Flask, render_template
+from Crypto.Cipher import DES3
+from Crypto.Util.Padding import pad
+import os
+
+FLAG = 'MERCER{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}'
+
+app = Flask(__name__)
+
+IV = os.urandom(8)
+
+def xor(a, b):
+    # XOR two bytestrings, repeating the second one if necessary
+    return bytes(x ^ y for x, y in zip(a, b * (1 + len(a) // len(b))))
+
+@app.route('/encrypt/<key>/<plaintext>/')
+def encrypt(key, plaintext):
+    try:
+        key = bytes.fromhex(key)
+        plaintext = bytes.fromhex(plaintext)
+        plaintext = xor(plaintext, IV)
+
+        cipher = DES3.new(key, 1)
+        ciphertext = cipher.encrypt(plaintext)
+        ciphertext = xor(ciphertext, IV)
+
+        return {"ciphertext": ciphertext.hex()}
+
+    except ValueError as e:
+        return {"error": str(e)}
+
+@app.route('/encrypt_flag/<key>/')
+def encrypt_flag(key):
+    return encrypt(key, pad(FLAG.encode(), 8).hex())
+
+@app.route('/')
+def index():
+    print("Index route accessed")  # Debug print
+    return render_template('index.html')
+```
+---
+
 ## Task
 
 1. Use the provided web UI to interact with both APIs. You can submit chosen keys and plaintexts using the interface (no additional code required).  
