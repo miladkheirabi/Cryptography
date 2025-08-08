@@ -1,0 +1,34 @@
+from Crypto.Util.number import long_to_bytes
+from sympy.ntheory import *
+from sympy.core import *
+
+n = 0x631a6181651e463313c2f1fb63910304c0f64303067612d3255c9660bf8d4eaff248b58f6d01d732881f480161a06d34c1376f0b5c4ea9b778e651aa99cfbdb3a3e9138310763110ef54b7fd6d2971642af69b60f60b29d022eaf850c0a423ac4925c8042bddd87ddd1f03f84e51b137510776c8bcbbec5464668fc88f9e8a947053e4830f8a0b48fa143f5706e9ec6b008ab033d81ebd79a09dce010f187e9f66c172ca4a550e0b5381f47055dbffa52ab283e05cf52fc8e60bb6acc75849eb71a45198535274a96949e75e74c8a7c10957e5cdb125c3b9e9f2d1beb9cc7546505986530522e7604c975c480541b2e31434ea83af974515c44f5dd0741f58f1
+e = 0x3f1a04b0bd5a8d9b07ae58dd1d880b5804a57f135a2895a5bddf27a7ec2a6a794cfc4224f20ca54498b9d6b2fac221e548535583c831cbaec6a4edd46717e8369b92b781df9e4d9d0595ba9bc03a811163521d57e317c4b6bf06b0325a788d7ba053a4dc48ba60bc690fcd5f4808adfd6875987dd0084b8c3d8cb29050319a6f639526026676da5ff5f5dd3161599103c744312bf540c142e5c64b87b5888bfbe1ae2ab0a13800dd6082be46811f6a644d6ffa617aae22d924dbdcb58d1b6797a6fb5da6e717e143b7c737453babb64792c2f3d181b9805fa44a3bcc09a7f4261ba5628c1dd9917759e33439172069a91c278f53c9f2a95bc87609d4b213ce23
+ct = 0x181e98bbedd0ad025826ce033aed40eeb0bfa8f0c495389bf3b1a53baa31aa297e767b1a350869953d8ceeefee6a79cb3f745f7c9474e0777a792259e3c9890e34919d34ca2a44ea830431da249b80dd6ffd6a48421031d42815345f7d13838f3ffc2d5a748df548b52e0c72917fbee072a098a7e0744ed3ea2eb3494003e3ddc55a1a6eef87b4405b29578fd0afbed6ca39967e7c84632d03637feb0ed8327c6faffb842072ac1e16439c42531a0db6164c143317f4c9a7f165bbcb8b03b0159c438cfe536a865b3540411d903017cf452cff0594855f0916ee710673a9cfcab4e53fe86e3eb1cb2995453481acab88f34950ed042ae27792293a80684a9416
+
+prefix = b'Applied_Crypto{'
+
+def wiener_variant(e, n):
+  q0 = 1
+
+  cf = continued_fraction_periodic(e,n)
+  denoms = [q.q for q in list(continued_fraction_convergents(cf))]
+  
+  print('[+] Extracted denominators.')
+
+  for q1 in denoms:
+    for r in range(5):
+      for s in range(5):
+        d = r * q1 + s * q0
+        pt = long_to_bytes(pow(ct, d, n))
+
+        if prefix in pt:
+          return pt, d
+          
+    q0 = q1
+  return None
+
+flag, d = wiener_variant(e, n)
+
+print('[+] Private key (d) =', d)
+print('[+] Recovered flag :', flag.decode())
